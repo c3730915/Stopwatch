@@ -26,6 +26,7 @@ public class StopwatchActivity extends AppCompatActivity {
     public void onClickStop(View view)
     {
         running = false;
+        Runtime.getRuntime().exec()
     }
 
     //Reset the stopwatch when the Reset button is clicked
@@ -46,7 +47,7 @@ public class StopwatchActivity extends AppCompatActivity {
         timeView.setText(time);
         if(running)
             seconds++;
-        
+
 
     }
 }
