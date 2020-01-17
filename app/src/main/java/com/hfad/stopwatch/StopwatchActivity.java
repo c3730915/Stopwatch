@@ -15,6 +15,7 @@ public class StopwatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
+        runTimer();
     }
     //Start the stopwatch running when Start button is clicked
     public void onClickStart(View view)
@@ -27,7 +28,7 @@ public class StopwatchActivity extends AppCompatActivity {
     public void onClickStop(View view)
     {
         running = false;
-        Runtime.getRuntime().exec()
+
     }
 
     //Reset the stopwatch when the Reset button is clicked
@@ -51,7 +52,9 @@ public class StopwatchActivity extends AppCompatActivity {
                 timeView.setText(time);
                 if(running)
                     seconds++;
-                handler.postDelayed(this,1000); //
+                handler.postDelayed(this,1000); //Post the code in the runnable to be run again after a delay of 1 second,
+                // as this line of code is included in the Runnable run() method, this will keep getting called.
+
             }
 
         });
